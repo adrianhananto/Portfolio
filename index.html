@@ -5,56 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">MyPortfolio</div>
+    <nav class="nav-pill">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#get-to-know-me" class="nav-link">Me</a></li>
         </ul>
     </nav>
 
+    <div class="contact-widget">
+        <button class="contact-btn">Contact Me ▾</button>
+        <div class="contact-menu">
+            <a href="https://www.linkedin.com/in/adrianhananto/">LinkedIn</a>
+            <a href="mailto:adrian.hananto09@gmail.com">Email</a>
+        </div>
+    </div>
+
     <section id="home" class="hero">
-        <div class="content">
-            <h1>Hi, I'm <span class="name">Your Name</span></h1>
-            <p>I am a web developer building things from scratch.</p>
-            <a href="#projects" class="btn">View My Work</a>
+        <div class="hero-container">
+            <span class="cloud-word font-design" style="top: 2%; left: 2%;">Typography</span>
+            <span class="cloud-word font-coding" style="top: 10%; left: 15%;">console.log()</span>
+            <span class="cloud-word font-pm" style="top: 5%; right: 2%;">Agile</span>
+            <span class="cloud-word font-creative" style="bottom: 5%; left: 2%;">Storytelling</span>
+            <span class="cloud-word font-coding" style="bottom: 15%; right: 15%;">&lt;div&gt;</span>
+            <span class="cloud-word font-pm" style="bottom: 25%; right: 2%;">JIRA</span>
+
+            <div class="hero-text">
+                <h1>Hi, I'm <br><span class="name">Adrian Hananto</span></h1>
+                <p>I am a junior project manager.</p>
+            </div>
+            <div class="hero-image">
+                <img src="esteh.png" alt="Adrian's Photo" class="profile-pic">
+            </div>
         </div>
     </section>
 
     <section id="projects" class="projects-section">
-        <h2>My Projects</h2>
-        
-        <div class="project-grid">
-            <div class="card">
-                <h3>Project One</h3>
-                <p>Description of your first cool project.</p>
+        <h2>Develop Impactful Solutions</h2>
+        <div class="project-row">
+            <div class="project-img-placeholder"><span>E-Commerce Image</span></div>
+            <div class="project-info">
+                <span class="date">Oct 2025</span>
+                <h3>E-Commerce Dashboard</h3>
+                <p>A comprehensive dashboard for managing online sales and inventory.</p>
+                <div class="category">Coding</div>
             </div>
-
-            <div class="card">
-                <h3>Project Two</h3>
-                <p>Description of your second cool project.</p>
+        </div>
+        <div class="project-row">
+            <div class="project-img-placeholder"><span>Brand Identity Image</span></div>
+            <div class="project-info">
+                <span class="date">Aug 2025</span>
+                <h3>Brand Identity System</h3>
+                <p>Designed a complete visual identity for a fintech startup.</p>
+                <div class="category">Design</div>
             </div>
+        </div>
+        <div class="project-row">
+            <div class="project-img-placeholder"><span>AI Platform Image</span></div>
+            <div class="project-info">
+                <span class="date">Dec 2025</span>
+                <h3>AI Analytics Platform</h3>
+                <p>An AI-driven platform for predictive data analysis and visualization.</p>
+                <div class="category">AI/ML</div>
+            </div>
+        </div>
 
-            <div class="card">
-                <h3>Project Three</h3>
-                <p>Description of your third cool project.</p>
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="projects.html" class="btn">More Projects</a>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <h2>Learning From Experience</h2>
+        <div class="scrolling-wrapper">
+            <div class="exp-card">
+                <div class="exp-img-container"><img src="https://via.placeholder.com/400x250" alt="Exp Image"></div>
+                <div class="exp-content">
+                    <div class="exp-header"><h3>UI Designer</h3><span class="year">2024</span></div>
+                    <div class="company">Creative Studio X</div>
+                    <p class="exp-desc">Led the redesign of the main product website, increasing user engagement by 40%.</p>
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-img-container"><img src="https://via.placeholder.com/400x250" alt="Exp Image"></div>
+                <div class="exp-content">
+                    <div class="exp-header"><h3>Frontend Dev</h3><span class="year">2023</span></div>
+                    <div class="company">Tech Solutions Inc.</div>
+                    <p class="exp-desc">Built responsive web applications using React and optimized site performance.</p>
+                </div>
+            </div>
+            <div class="exp-card" style="justify-content: center; align-items: center; background: rgba(0,0,0,0.2);">
+                <div style="text-align: center; padding: 40px;">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 10px;">More Coming Soon</h3>
+                    <p style="color: #666;">Under Development 🚧</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <h2>Contact Me</h2>
-        <p>Want to work together? Send me an email!</p>
-        <a href="mailto:your@email.com" class="btn">Email Me</a>
+    <section id="skills" class="skills-section">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-box"><h3>Project Manager</h3><p>Leading teams & Agile.</p></div>
+            <div class="skill-box"><h3>Coding</h3><p>React, JS, HTML/CSS.</p></div>
+            <div class="skill-box"><h3>Design</h3><p>Figma, UI/UX.</p></div>
+            <div class="skill-box"><h3>Creative</h3><p>Video Editing, Ideas.</p></div>
+        </div>
+    </section>
+
+    <section class="stories-section">
+        <h2>The Stories Behind It</h2>
+        <div class="card-stack-container">
+            <div class="story-card card-1">
+                <div class="story-img-placeholder"></div>
+                <h3>The First Bug</h3>
+                <p>How I spent 48 hours fixing a single comma.</p>
+            </div>
+            <div class="story-card card-2">
+                <div class="story-img-placeholder"></div>
+                <h3>Design Fail</h3>
+                <p>Why Comic Sans is never the answer.</p>
+            </div>
+            <div class="story-card card-3">
+                <div class="story-img-placeholder"></div>
+                <h3>First Client</h3>
+                <p>From cold email to first paycheck.</p>
+            </div>
+        </div>
+        <button onclick="shuffleCards()" class="btn shuffle-btn">Shuffle Stories 🔀</button>
+    </section>
+
+    <section id="get-to-know-me" class="know-me-section">
+        <h2 style="text-align: center; color: var(--text-cream); font-size: 2.5rem; margin-bottom: 50px;">Get To Know Me</h2>
+        
+        <div class="know-me-container">
+            <div class="know-me-left">
+                <div class="contact-row">
+                    <div class="contact-logo"><i class="fab fa-linkedin-in"></i></div>
+                    <a href="https://www.linkedin.com/in/adrianhananto/" class="contact-link">linkedin.com/in/adrianhananto</a>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-logo"><i class="fas fa-envelope"></i></div>
+                    <a href="adrian.hananto09@gmail.com" class="contact-link">adrian.hananto09@gmail.co</a>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-logo"><i class="fas fa-map-marker-alt"></i></div>
+                    <span style="color: #ccc;">Jakarta, Indonesia</span>
+                </div>
+
+                <div class="bio-box">
+                    <div class="bio-title">Little about me</div>
+                    <p class="bio-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                </div>
+            </div>
+
+            <div class="know-me-right">
+                <div class="me-pic-placeholder">
+                    Picture place holder
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-box">
+            <div class="timeline-title">Past - Present - Future</div>
+            <div class="timeline-row">
+                <div class="timeline-item">
+                    <p>Information Systems majoring cloud computing</p>
+                </div>
+                <div class="timeline-arrow">→</div>
+                <div class="timeline-item">
+                    <p>Final year student awaiting graduation</p>
+                </div>
+                <div class="timeline-arrow">→</div>
+                <div class="timeline-item">
+                    <p>Interest on AI, Quantum Computing, and Finance</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>© 2024 Your Name. Built with HTML & CSS.</p>
+        <p>© 2026 Adrian Hananto.</p>
     </footer>
 
+    <script>
+        function shuffleCards() {
+            const container = document.querySelector('.card-stack-container');
+            const cards = Array.from(container.children);
+            container.appendChild(cards[0]);
+            const newOrder = Array.from(container.children);
+            newOrder.forEach((card, index) => {
+                card.className = `story-card card-${index + 1}`;
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150; 
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+                
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('.nav-pill a[href*=' + id + ']').classList.add('active');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
