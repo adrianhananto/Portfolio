@@ -1,120 +1,176 @@
-/* 1. GLOBAL RESET - This removes default spacing so we have full control */
-* {
-    html {
-    scroll-behavior: smooth;
+/* 1. GLOBAL RESET & DARK THEME VARIABLES */
+:root {
+    --bg-color: #0a0a0a;      /* Very dark grey (almost black) */
+    --card-bg: #1a1a1a;       /* Slightly lighter for cards */
+    --text-color: #e0e0e0;    /* Light grey for text (easier on eyes than pure white) */
+    --accent-color: #3b82f6;  /* Bright Tech Blue for buttons/links */
+    --accent-hover: #60a5fa;  /* Lighter blue for hover effects */
 }
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f8f9fa; /* Light grey background */
-    color: #333; /* Dark text for readability */
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
 /* 2. NAVIGATION BAR */
 nav {
-    display: flex; /* This aligns items side-by-side */
-    justify-content: space-between; /* Pushes Logo to left, Links to right */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-    position: sticky; /* Keeps nav at top when scrolling */
+    padding: 20px 5%;
+    background-color: rgba(10, 10, 10, 0.95); /* Semi-transparent dark */
+    backdrop-filter: blur(10px); /* Blurs content behind nav */
+    position: sticky;
     top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2563eb; /* Nice blue color */
+    color: var(--text-color);
+    letter-spacing: 1px;
 }
 
 nav ul {
-    list-style: none; /* Removes bullet points */
+    list-style: none;
     display: flex;
-    gap: 20px; /* Space between links */
+    gap: 30px;
 }
 
 nav a {
-    text-decoration: none; /* Removes underline */
-    color: #333;
+    text-decoration: none;
+    color: #a0a0a0; /* Dimmed links */
     font-weight: 500;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #2563eb; /* Changes color when you hover mouse */
+    color: var(--accent-color); /* Lights up blue on hover */
 }
 
 /* 3. HERO SECTION (The Intro) */
 .hero {
-    height: 80vh; /* 80% of the screen height */
+    height: 85vh;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Cool gradient */
-    color: white;
+    /* Subtle dark gradient background */
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0a 100%);
+    padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.name {
+    color: var(--accent-color);
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6); /* Blue to Purple gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #888;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Modern Button Style */
 .btn {
-    padding: 12px 24px;
-    background-color: white;
-    color: #764ba2;
+    padding: 12px 30px;
+    background-color: var(--accent-color);
+    color: white;
     text-decoration: none;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 50px; /* Pill shape */
     font-weight: bold;
-    transition: 0.3s; /* Smooth animation */
+    transition: 0.3s;
+    border: 2px solid var(--accent-color);
 }
 
 .btn:hover {
-    background-color: #eee;
-    transform: scale(1.05); /* Slightly grows when hovered */
+    background-color: transparent;
+    color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); /* Glowing effect */
 }
 
 /* 4. PROJECTS SECTION */
 .projects-section {
-    padding: 60px 50px;
+    padding: 80px 5%;
+}
+
+.projects-section h2 {
     text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
 }
 
 .project-grid {
-    display: grid; /* Creates a grid layout */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 30px;
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
 .card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #333; /* Subtle border */
+    transition: 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Moves up slightly on hover */
+    transform: translateY(-10px);
+    border-color: var(--accent-color); /* Border turns blue on hover */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* 5. FOOTER */
-footer {
-    background-color: #333;
-    color: white;
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+/* 5. CONTACT & FOOTER */
+.contact-section {
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+    padding: 100px 20px;
+    background: linear-gradient(to top, #111, transparent);
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #222;
+    color: #666;
+    font-size: 0.9rem;
 }
