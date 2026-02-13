@@ -273,3 +273,135 @@ footer { text-align: center; padding: 40px; color: var(--accent-brown); border-t
 .project-cloud .bw-bot-left  { bottom: 10%; left: 5%; }
 .project-cloud .bw-top-right { top: 10%; right: 5%; }
 .project-cloud .bw-bot-right { bottom: 10%; right: 5%; }
+
+/* --- PROJECTS PAGE SPECIFIC STYLES --- */
+
+/* Container for each category section */
+.category-section {
+    margin-bottom: 80px;
+    padding-left: 5%; /* Align with the headers */
+}
+
+/* REVISED: The Horizontal Scrolling Container */
+.project-scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    /* REVISED: Added padding on all sides so hover scale doesn't get clipped */
+    padding: 10px 10px 30px 10px; 
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+.project-scroll-container::-webkit-scrollbar { display: none; /* Hide scrollbar Chrome/Safari */ }
+
+/* The Individual Photo Card */
+.photo-card {
+    min-width: 350px;
+    width: 350px;
+    height: 250px; /* Adjust height as needed */
+    background-color: #333; /* Fallback color */
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    position: relative;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--accent-brown);
+    transform: translateZ(0); 
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.photo-card:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-gold);
+    z-index: 10;
+}
+
+/* Gradient Overlay for Text Readability */
+.photo-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8));
+    z-index: 1;
+}
+
+/* Content Container Inside Card */
+.card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    color: var(--text-cream);
+    text-align: left;
+}
+
+/* Header Row (Title + Year) */
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--text-cream);
+}
+
+.card-year {
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.card-role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.card-desc {
+    font-size: 0.8rem;
+    color: #ccc;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* REVISED: NEW "Coming Soon" Card for Projects Page */
+.project-coming-soon {
+    min-width: 250px;
+    width: 250px;
+    height: 250px;
+    background: rgba(0,0,0,0.2); /* Semi-transparent background like home page */
+    border: 1px solid var(--accent-brown);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-coming-soon h3 {
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.project-coming-soon p {
+    color: #666;
+    font-size: 0.9rem;
+}
